@@ -70,26 +70,31 @@ fun main() {
             println("숫자를 입력해주세요")
             continue
         }
+        var add = AddOperation()
+        var sub = SubstractOperation()
+        var mul = MultiplyOperation()
+        var div = DivideOperation()
 
-            when (oper) {
-                "+" -> {
-                    result = Calculator().addOperation(num1, num2)
-                }
 
-                "-" -> {
-                    result = Calculator().substractOperation(num1, num2)
-                }
-
-                "*" -> {
-                    result = Calculator().multiplyOperation(num1, num2)
-                }
-
-                "/" -> {
-                    result = Calculator().divideOperation(num1, num2)
-                }
-
-                else -> "다시 입력해주세요"
+        when (oper) {
+            "+" -> {
+                result = add.operate(num1, num2).toDouble()
             }
+
+            "-" -> {
+                result = sub.operate(num1, num2).toDouble()
+            }
+
+            "*" -> {
+                result = mul.operate(num1, num2).toDouble()
+            }
+
+            "/" -> {
+                result = div.operate(num1, num2).toDouble()
+            }
+
+            else -> "다시 입력해주세요"
+        }
 
         println("${num1} ${oper} ${num2} = ${result}입니다.")
 
